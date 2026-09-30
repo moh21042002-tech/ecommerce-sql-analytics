@@ -41,3 +41,12 @@ SELECT
 FROM customers c
 LEFT JOIN orders o ON c.customer_id = o.customer_id
 GROUP BY c.customer_id;
+-- Additional Analytical Queries for Reporting
+-- 4. Find products with low stock (less than 50 units)
+SELECT product_name, stock_quantity 
+FROM products 
+WHERE stock_quantity < 50;
+
+-- 5. Calculate average order amount
+SELECT AVG(total_amount) AS average_order_value 
+FROM orders;
